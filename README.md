@@ -24,17 +24,14 @@ A JavaFX kinsleykjv project containing the following configurations:
 1. Clone the repository.
 
 ```bash
-$ git clone https://github.com/lucasstarsz/javafx-kinsleykjv
+$ git clone https://github.com/kinsleykajiva/our-player-Media-Player
 ```
+2. Open the project directory with Intelli J idea IDE and resolve all dependencies.
+3. Build the project.
+4. Run the project.
 
-2. Build the project.
 
-```bash
-$ cd javafx-kinsleykjv
-$ ./gradlew build
-```
 
-_If you're on Windows, run `gradlew.bat` instead._
 
 3. Read through [build.gradle][Build-Gradle-File] for configuration information.
 
