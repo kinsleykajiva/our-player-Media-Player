@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXSlider?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootParent" prefHeight="580.0" prefWidth="1024.0" styleClass="rootAnchor" stylesheets="@../styles/Stylesheet.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kinsleykjv.controller.MainScreenController">
+   <children>
+      <MediaView fx:id="mediaView" fitHeight="580.0" fitWidth="1024.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <HBox layoutY="1.0" prefHeight="44.0" prefWidth="1024.0" />
+      <Pane fx:id="navPane" prefHeight="580.0" prefWidth="150.0" style="-fx-border-radius: 40 5 5; -fx-background-radius: 0 60 5 5;" styleClass="sidebar" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox layoutX="32.0" layoutY="107.0">
+               <children>
+                  <HBox id="PLAYLIST" alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="100.0" styleClass="sidebar-btn">
+                     <children>
+                        <ImageView fx:id="img1" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/defaul/icons/icons8_playlist_30px_2.png" />
+                           </image>
+                        </ImageView>
+                        <Label styleClass="sidebar-btn-text" text="Playlist">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox id="ALBUM" alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="100.0" styleClass="sidebar-btn">
+                     <children>
+                        <ImageView fx:id="img2" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/defaul/icons/icons8_albums_24px_3.png" />
+                           </image>
+                        </ImageView>
+                        <Label styleClass="sidebar-btn-text" text="Album">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox id="ARTIST" alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="100.0" styleClass="sidebar-btn">
+                     <children>
+                        <ImageView fx:id="img3" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/defaul/icons/icons8_person_male_24px_1.png" />
+                           </image>
+                        </ImageView>
+                        <Label styleClass="sidebar-btn-text" text="Artist">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox id="SONGS" alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="100.0" styleClass="sidebar-btn">
+                     <children>
+                        <ImageView fx:id="img4" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/defaul/icons/icons8_music_26px_1.png" />
+                           </image>
+                        </ImageView>
+                        <Label styleClass="sidebar-btn-text" text="Audio">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox id="BROWSER" alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="100.0" styleClass="sidebar-btn">
+                     <children>
+                        <ImageView fx:id="img81" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/defaul/icons/icons8_browser_window_24px_4.png" />
+                           </image>
+                        </ImageView>
+                        <Label styleClass="sidebar-btn-text" text="Open File">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <Label layoutX="31.0" layoutY="71.0" styleClass="sidebar-btn-text" text="Access">
+               <font>
+                  <Font name="Calibri Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="32.0" layoutY="285.0" styleClass="sidebar-btn-text" text="PLAYLIST">
+               <font>
+                  <Font name="Calibri Bold" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="filesPane" layoutX="150.0" prefHeight="580.0" prefWidth="450.0" styleClass="childpane" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER" layoutX="20.0" layoutY="79.0">
+               <children>
+                  <Label fx:id="txtHome" text="Home" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Bold" size="28.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <ProgressBar fx:id="progressBar" prefHeight="18.0" prefWidth="150.0">
+                     <opaqueInsets>
+                        <Insets left="20.0" />
+                     </opaqueInsets>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ProgressBar>
+               </children>
+            </HBox>
+            <Pane layoutX="22.0" layoutY="115.0" prefHeight="452.0" prefWidth="417.0" styleClass="imgpane">
+               <effect>
+                  <Reflection />
+               </effect>
+               <children>
+                  <JFXListView fx:id="listview" prefHeight="452.0" prefWidth="417.0" style="-fx-background-color: #5D606F;" styleClass="list-view" />
+               </children>
+            </Pane>
+            <Label layoutX="353.0" layoutY="24.0" text="version: 1.0" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <VBox fx:id="vBox" layoutX="602.0" style="-fx-background-color: #2b2b2b;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="602.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label text="My Files" textFill="WHITE" VBox.vgrow="ALWAYS">
+               <font>
+                  <Font name="Calibri Bold" size="28.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="20.0" right="10.0" top="70.0" />
+               </VBox.margin>
+            </Label>
+            <TreeView fx:id="treeView" minHeight="0.0" minWidth="0.0" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </TreeView>
+            <Label fx:id="searchLabel" alignment="CENTER" contentDisplay="TOP" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" styleClass="white-black-label" text="Searching" visible="false">
+               <graphic>
+                  <ProgressIndicator minHeight="0.0" minWidth="0.0" />
+               </graphic>
+            </Label>
+         </children>
+      </VBox>
+      <Circle fill="#ffec26" layoutX="48.0" layoutY="20.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+      <Circle fx:id="circleClose" fill="#ff6d53" layoutX="32.0" layoutY="20.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="circleMinimize" fill="#2fea37" layoutX="65.0" layoutY="20.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" />
+      <ImageView fx:id="imgBack" fitHeight="20.0" fitWidth="20.0" layoutX="100.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/defaul/icons/left-arrow.png" />
+         </image>
+      </ImageView>
+      <HBox fx:id="controlls" alignment="CENTER" layoutY="542.0" prefHeight="40.0" prefWidth="1024.0" style="-fx-background-color: #3e3c39;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <ImageView fx:id="ImgPrev" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#prevPlayEvent" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/defaul/icons/icons8_left_24px.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="ImgPausePlay" fitHeight="20.0" fitWidth="20.0" onMouseClicked="#playPauseEvent" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/defaul/icons/icons8_pause_24px_1.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="ImgPrevNext" fitHeight="20.0" fitWidth="20.0" onMouseClicked="#nexxtPlayEvent" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/defaul/icons/icons8_chevron_right_26px.png" />
+               </image>
+            </ImageView>
+            <JFXSlider fx:id="slider" prefHeight="14.0" prefWidth="768.0" styleClass="jfx-slider">
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </JFXSlider>
+            <ImageView fx:id="ImgSpeaker" fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/defaul/icons/icons8_volume_up_26px.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </ImageView>
+         </children>
+      </HBox>
+      <VBox fx:id="controlBox" alignment="CENTER" layoutX="921.0" layoutY="65.0" AnchorPane.bottomAnchor="101.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="65.0">
+         <children>
+            <JFXSlider fx:id="volumeSeek" orientation="VERTICAL" prefHeight="377.0" prefWidth="63.0" styleClass="jfx-slider" />
+            <Label text="Volume" textAlignment="CENTER" textFill="#a84747" underline="true">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Label>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
