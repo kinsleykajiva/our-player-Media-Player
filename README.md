@@ -1,6 +1,6 @@
 <div align="center">
 
-# JavaFX Template Project
+# JavaFX  Project
 
 [![License Badge][License-Badge]][License-File]
 </div>
